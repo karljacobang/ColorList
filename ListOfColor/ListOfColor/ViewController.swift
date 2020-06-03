@@ -21,6 +21,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let brown = UIColor.brown
     let purple = UIColor.purple
     
+    let colorname = ["red","blue","green","gray","yellow","cyan","magenta","orange","brown","purple"]
+    
     @IBOutlet weak var tableView: UITableView!
     var colors = [UIColor]()
     
@@ -32,12 +34,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return colors.count
+        return colorname.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.contentView.backgroundColor = colors[indexPath.row]
+        cell.textLabel?.text = colorname[indexPath.row]
         return cell
     }
 
